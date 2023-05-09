@@ -43,9 +43,9 @@ def test_welcome_message():
 
 # @pytest.mark.skip("pending")
 def test_prompt():
-    with patch('builtins.input', side_effect=["bbbb", "aaaa", "yyyy", "aaaa", "nnnnn"]):
-        actual = prompt(5)
-    expected = ("bbbb", "aaaa", "yyyy", "aaaa", "nnnnn")
+    with patch('builtins.input', side_effect=["majestic", "purple", "Scott", "colored", "JB", "laughing", "tickled", "arrows", "gorilla", "butterfly", "Betty", "silly", "tests", "striped", "jackets", "44", "Wilson", "3", "leaves", "4", "swords"]):
+        actual = prompt(("majestic", "purple", "Scott", "colored", "JB", "laughing", "tickled", "arrows", "gorilla", "butterfly", "Betty", "silly", "tests", "striped", "jackets", "44", "Wilson", "3", "leaves", "4", "swords"))
+    expected = (("majestic", "purple", "Scott", "colored", "JB", "laughing", "tickled", "arrows", "gorilla", "butterfly", "Betty", "silly", "tests", "striped", "jackets", "44", "Wilson", "3", "leaves", "4", "swords"))
     assert actual == expected
 
 

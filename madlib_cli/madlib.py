@@ -44,15 +44,18 @@ def parse_template(text):
 
 
 
-def prompt(num_words):
+def prompt(lst):
     '''
     This function to prompt user to enter specific types of words then print it as a tuple. 
     '''
     tupleUser=()
-    for i in range(num_words) :
-      userInput=input("enter word {}!! ".format(i + 1))
-      tupleUser+=(userInput,)
+    for element in lst :
+      user_Input = input(f'enter a {element}\n')
+      tupleUser+=(user_Input,)
     return tupleUser
+   
+   
+
 
 
 
@@ -76,16 +79,24 @@ def merge(text,wordTuple):
 
 
 
+def new_file(path,mergedText):
+   with open(path,'w' ) as nf:
+      nf.write(mergedText)
+      
 
-
-
-if __name__ ==" __main__":
-  welcomeMessage()
-  read_template("assets/original_text.txt") 
-  parse_template("It was a {Adjective} and {Adjective} {Noun}." )
-  prompt()
-  merge("It was a {Adjective} and {Adjective} {Noun}.",("dark", "stormy", "night"))
-  merge("It was a {} and {} {}.", ("dark", "stormy", "night"))
+if __name__ == "__main__":
+    print("bayan")
+    print(welcomeMessage())
+    read_content = read_template("./assets/original_text.txt") 
+    stripped, parts = parse_template(read_content)
+    user_prompt = prompt(parts)
+    merge_text=merge(stripped,user_prompt)
+    print(merge_text)
+    new_file("assets/new_file.txt",merge_text)
+   
+  
+  
+ 
 
 
 
